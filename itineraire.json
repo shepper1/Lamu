@@ -1,0 +1,279 @@
+{
+  "pays": "Kenya",
+  "drapeau": "🇰🇪",
+  "symbole": "⛵",
+  "titre": "Lamu, l'île hors du temps",
+  "budget": "2200€",
+  "duree": "10 jours",
+  "temps_vol": "Environ 12h à 15h avec escale",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée au paradis Swahili",
+      "legende": "Après un long voyage, vous atterrissez sur l'île voisine de Manda. Une courte traversée en bateau vous mène à Lamu, où le temps semble s'être arrêté. L'absence de voitures, remplacées par les ânes et les boutres (dhows), vous plonge immédiatement dans une atmosphère unique. Installez-vous et imprégnez-vous de la quiétude ambiante pour débuter en douceur.",
+      "lieu": "Île de Lamu",
+      "activites": [
+        "🛬 <strong>Arrivée et transfert en bateau:</strong> Atterrissez sur l'île de Manda et rejoignez votre hébergement via un bateau traditionnel, votre premier contact avec la vie insulaire.",
+        "🚶‍♂️ <strong>Premiers pas et dîner face à la mer:</strong> Faites une courte balade pour vous familiariser avec les ruelles avant de savourer un dîner de fruits de mer frais les pieds dans le sable."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "✈️",
+          "titre": "Transfert aéroport",
+          "texte": "L'aéroport est sur l'île de Manda. Le transfert vers Lamu ou Shela se fait obligatoirement en bateau (environ 10-15 min)."
+        },
+        {
+          "symbole": "🐴",
+          "titre": "Transport local",
+          "texte": "Il n'y a pas de voitures à Lamu. Préparez-vous à marcher ou à utiliser les ânes, le principal moyen de transport terrestre."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🏛️",
+      "titre": "Immersion dans la vieille ville",
+      "legende": "Plongez dans l'histoire de Lamu, site classé au patrimoine mondial de l'UNESCO. Perdez-vous dans le labyrinthe de ses ruelles étroites, admirez les portes en bois sculpté et découvrez l'héritage swahili préservé. Chaque coin de rue raconte une histoire, un mélange d'influences arabes, persanes, indiennes et européennes.",
+      "lieu": "Lamu Town",
+      "activites": [
+        "🏛️ <strong>Visite du Fort de Lamu et du musée:</strong> Explorez le fort du XIXe siècle qui domine le front de mer et plongez dans l'histoire locale au Lamu Museum pour comprendre la culture swahilie.",
+        "🎨 <strong>Découverte de l'artisanat local:</strong> Flânez dans les échoppes pour admirer le travail des artisans, notamment les célèbres portes sculptées et les maquettes de boutres."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "🧭",
+          "titre": "Se perdre",
+          "texte": "N'hésitez pas à vous perdre dans les ruelles. C'est la meilleure façon de découvrir les trésors cachés de la ville."
+        },
+        {
+          "symbole": "👟",
+          "titre": "Chaussures",
+          "texte": "Portez des chaussures confortables, les rues sont pavées de manière inégale et vous marcherez beaucoup."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🏖️",
+      "titre": "Plage de sable blanc et village bohème",
+      "legende": "À quelques kilomètres de l'agitation de Lamu Town se trouve le village de Shela. Plus calme et chic, il est réputé pour sa magnifique plage de 12 km et ses maisons blanches aux toits de makuti. C'est l'endroit idéal pour se détendre, se baigner et profiter d'une ambiance plus décontractée.",
+      "lieu": "Shela",
+      "activites": [
+        "🚶‍♀️ <strong>Balade de Lamu à Shela:</strong> Empruntez le sentier côtier à marée basse pour une agréable marche de 45 minutes entre les deux villages, en observant la vie locale.",
+        "🏖️ <strong>Détente sur la plage de Shela:</strong> Profitez de l'immense plage de sable fin pour vous baigner, lire ou simplement admirer les boutres qui passent au loin."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🌊",
+          "titre": "Marées",
+          "texte": "Vérifiez les horaires des marées pour la balade entre Lamu et Shela. À marée haute, il faudra prendre un bateau-taxi."
+        },
+        {
+          "symbole": "🍽️",
+          "titre": "Restaurant",
+          "texte": "Le restaurant Peponi Hotel est une institution à Shela, parfait pour un verre ou un déjeuner avec une vue imprenable."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "⛵",
+      "titre": "Coucher de soleil sur l'Océan Indien",
+      "legende": "L'expérience emblématique de Lamu est sans conteste la sortie en dhow, ce voilier traditionnel arabe. Embarquez en fin d'après-midi pour une navigation silencieuse dans le chenal. Laissez-vous bercer par les vagues tandis que le soleil descend, peignant le ciel de couleurs flamboyantes. Un moment magique et inoubliable.",
+      "lieu": "Archipel de Lamu",
+      "activites": [
+        "⛵ <strong>Croisière au coucher du soleil:</strong> Naviguez sur un dhow traditionnel et observez le ciel s'embraser pendant que le soleil se couche sur l'océan, un spectacle d'une rare beauté.",
+        "🦞 <strong>Dîner à bord:</strong> Prolongez l'expérience avec un dîner de fruits de mer grillés, préparé par l'équipage et servi à bord sous les étoiles."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🤝",
+          "titre": "Négociation",
+          "texte": "N'hésitez pas à discuter avec plusieurs capitaines sur le front de mer et à négocier le prix de votre excursion."
+        },
+        {
+          "symbole": "🧥",
+          "titre": "Petite laine",
+          "texte": "Prévoyez un vêtement léger pour le retour, la brise marine peut être fraîche après le coucher du soleil."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🏺",
+      "titre": "Sur les traces des anciens Swahilis",
+      "legende": "Traversez le chenal pour rejoindre l'île de Manda, un havre de paix sauvage. Explorez les ruines de Takwa, les vestiges d'une ancienne cité swahilie du XVIe siècle abandonnée mystérieusement. L'après-midi, détendez-vous sur les plages isolées de l'île, loin de toute agitation.",
+      "lieu": "Île de Manda",
+      "activites": [
+        "🏺 <strong>Exploration des ruines de Takwa:</strong> Marchez à travers la mangrove pour découvrir ce site historique fascinant, avec sa grande mosquée et son pilier funéraire remarquablement conservés.",
+        "🏝️ <strong>Après-midi à Manda Bay:</strong> Profitez des plages tranquilles de Manda, idéales pour la baignade et la détente, avec une vue imprenable sur Shela."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🦟",
+          "titre": "Anti-moustiques",
+          "texte": "Les ruines de Takwa sont situées près d'une mangrove, un anti-moustiques est indispensable."
+        },
+        {
+          "symbole": "💧",
+          "titre": "Hydratation",
+          "texte": "Apportez beaucoup d'eau, il y a peu d'ombre sur le site et la chaleur peut être intense."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🍲",
+      "titre": "Gastronomie et savoir-faire Swahili",
+      "legende": "Immergez-vous davantage dans la culture locale en découvrant ses saveurs et ses traditions. Participez à un cours de cuisine pour apprendre les secrets des plats swahilis, riches en épices et en lait de coco. Puis, visitez un sanctuaire qui œuvre pour la préservation de l'animal emblématique de l'île.",
+      "lieu": "Lamu Town",
+      "activites": [
+        "🍲 <strong>Cours de cuisine Swahilie:</strong> Apprenez à préparer des plats locaux comme le biryani ou le poisson au lait de coco lors d'un cours convivial chez l'habitant.",
+        "🐴 <strong>Visite du Donkey Sanctuary:</strong> Découvrez le travail de ce refuge qui soigne et protège les ânes, piliers de l'économie et du transport sur l'île."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🌶️",
+          "titre": "Épices",
+          "texte": "La cuisine swahilie utilise beaucoup de cardamome, clou de girofle, cannelle et cumin. Une explosion de saveurs !"
+        },
+        {
+          "symbole": "❤️",
+          "titre": "Soutien",
+          "texte": "Le Donkey Sanctuary vit de dons. Votre visite est une forme de soutien à leur action essentielle."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🛶",
+      "titre": "Aventure dans la mangrove",
+      "legende": "Partez à la découverte d'un autre visage de l'archipel : ses vastes étendues de mangrove. Cet écosystème vital abrite une faune riche et protège les côtes. Une excursion en bateau ou en kayak dans ce labyrinthe de verdure est une expérience paisible et fascinante, offrant une perspective différente sur la beauté naturelle de Lamu.",
+      "lieu": "Mangroves de l'archipel",
+      "activites": [
+        "🛶 <strong>Excursion en kayak dans la mangrove:</strong> Pagayez en silence à travers les canaux étroits de la mangrove pour observer les oiseaux et les crabes dans leur habitat naturel.",
+        "🐠 <strong>Snorkeling à Manda Toto:</strong> Prenez un bateau pour l'île de Manda Toto, un excellent spot de snorkeling où vous pourrez admirer des coraux colorés et une vie marine abondante."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🦀",
+          "titre": "Biodiversité",
+          "texte": "La mangrove est une nurserie pour de nombreuses espèces de poissons et de crustacés, essentielle à l'équilibre de l'écosystème."
+        },
+        {
+          "symbole": "☀️",
+          "titre": "Protection solaire",
+          "texte": "La réverbération du soleil sur l'eau est forte. N'oubliez pas crème solaire, chapeau et lunettes."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🛍️",
+      "titre": "Flânerie et derniers instants",
+      "legende": "Profitez de cette journée pour faire ce dont vous avez le plus envie. Retourner sur la plage de Shela, vous perdre une dernière fois dans les ruelles de Lamu, ou chercher des souvenirs uniques à rapporter. C'est le moment de savourer la lenteur de la vie insulaire avant le départ.",
+      "lieu": "Lamu / Shela",
+      "activites": [
+        "🛍️ <strong>Shopping de souvenirs:</strong> Cherchez des objets d'artisanat local comme des kikoys (paréos), des bijoux en perles ou des épices pour prolonger le voyage à la maison.",
+        "🧘 <strong>Détente absolue:</strong> Offrez-vous un massage, participez à un cours de yoga face à la mer ou trouvez simplement un endroit calme pour lire et contempler l'océan."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🎨",
+          "titre": "Galeries d'art",
+          "texte": "Lamu et Shela abritent plusieurs petites galeries d'art présentant le travail d'artistes locaux et internationaux."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "✈️",
+      "titre": "Derniers moments et envol",
+      "legende": "Savourez un dernier petit-déjeuner swahili face à la mer. Profitez des dernières heures pour une ultime baignade ou une courte promenade. Il est ensuite temps de faire la traversée en bateau vers l'aéroport de Manda pour votre vol retour, la tête remplie de souvenirs inoubliables.",
+      "lieu": "Lamu / Manda",
+      "activites": [
+        "☕ <strong>Dernier café sur le front de mer:</strong> Prenez le temps d'observer une dernière fois l'animation des boutres et des ânes tout en sirotant un café kenyan.",
+        "✈️ <strong>Transfert vers l'aéroport:</strong> Traversez en bateau jusqu'à l'aéroport de Manda pour prendre votre vol vers Nairobi, puis votre correspondance pour Paris."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Timing",
+          "texte": "Prévoyez suffisamment de temps pour le transfert en bateau et l'enregistrement à l'aéroport de Manda, qui est de petite taille."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🏡",
+      "titre": "Retour à la maison",
+      "legende": "Arrivée à Paris après un vol de nuit. Le voyage s'achève, mais les couleurs, les saveurs et la quiétude de Lamu resteront gravées dans votre mémoire. C'est la fin d'une parenthèse enchantée hors du temps.",
+      "lieu": "Paris",
+      "activites": [
+        "🏡 <strong>Arrivée à Paris:</strong> Atterrissage à Paris, fin de cette magnifique échappée kenyane."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "😴",
+          "titre": "Décalage horaire",
+          "texte": "Le décalage horaire est minime (1 ou 2 heures selon la saison), ce qui facilite le retour à la routine."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de janvier à mars et de juillet à octobre.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Climat équatorial chaud et humide (25-32°C). Prévoir vêtements légers en coton/lin et un maillot de bain.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La monnaie est le Shilling kényan (KES). Prévoir suffisamment d'espèces, les distributeurs et paiements par carte sont rares.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Sur l'île : à pied, à dos d'âne ou en bateau-taxi. Le dhow est utilisé pour les excursions.",
+      "symbole": "⛵"
+    },
+    {
+      "titre": "Le Wi-Fi est disponible dans la plupart des hôtels mais peut être lent. Une carte SIM locale (Safaricom) est recommandée.",
+      "symbole": "📶"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Conseils aux voyageurs",
+      "titre": "France Diplomatie - Kenya",
+      "url": "https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/kenya/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Informations touristiques",
+      "titre": "Magical Kenya",
+      "url": "https://magicalkenya.com/",
+      "symbole": "🌍"
+    },
+    {
+      "legende": "Prévisions météo",
+      "titre": "Météo à Lamu",
+      "url": "https://www.accuweather.com/fr/ke/lamu/223651/weather-forecast/223651",
+      "symbole": "🌤️"
+    }
+  ]
+}
