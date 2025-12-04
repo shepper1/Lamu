@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du voyage - undefined</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    .info-window { max-width: 250px; font-family: Arial, sans-serif; }
+    .info-window img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px; }
+    .info-window h3 { margin: 0 0 5px 0; font-size: 16px; color: #333; }
+    .info-window p { margin: 5px 0; font-size: 14px; color: #666; }
+    .info-window a { color: #1a73e8; text-decoration: none; }
+    .info-window a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    function initMap() {
+      const center = { lat: -1.7657914665169894, lng: 40.257410713455414 };
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+      });
+      
+      const markers = [{"lat":-2.290435,"lng":40.8677469,"name":"Île de Lamu","jour":1,"titre":"Arrivée au paradis Swahili","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.290435,40.8677469&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.290435,40.8677469","aiImageUrl":"jour1.jpg"},{"lat":-2.2695575,"lng":40.9006408,"name":"Lamu Town","jour":2,"titre":"Immersion dans la vieille ville","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.2695575,40.9006408&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.2695575,40.9006408","aiImageUrl":"jour2.jpg"},{"lat":-2.2931011,"lng":40.9138671,"name":"Shela","jour":3,"titre":"Plage de sable blanc et village bohème","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.2931011,40.9138671&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.2931011,40.9138671","aiImageUrl":"jour3.jpg"},{"lat":-2.156749698652905,"lng":41.05895712109878,"name":"Archipel de Lamu","jour":4,"titre":"Coucher de soleil sur l'Océan Indien","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.156749698652905,41.05895712109878&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.156749698652905,41.05895712109878","aiImageUrl":"jour4.jpg"},{"lat":-2.2725033,"lng":40.9485906,"name":"Île de Manda","jour":5,"titre":"Sur les traces des anciens Swahilis","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.2725033,40.9485906&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.2725033,40.9485906","aiImageUrl":"jour5.jpg"},{"lat":-0.023559,"lng":37.906193,"name":"Mangroves de l'archipel","jour":7,"titre":"Aventure dans la mangrove","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-0.023559,37.906193&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-0.023559,37.906193","aiImageUrl":"jour7.jpg"},{"lat":-2.2931011,"lng":40.9138671,"name":"Lamu / Shela","jour":8,"titre":"Flânerie et derniers instants","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.2931011,40.9138671&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.2931011,40.9138671","aiImageUrl":"jour8.jpg"},{"lat":-2.2695575,"lng":40.9006408,"name":"Lamu / Manda","jour":9,"titre":"Derniers moments et envol","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.2695575,40.9006408&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.2695575,40.9006408","aiImageUrl":"jour9.jpg"},{"lat":-0.023559,"lng":37.906193,"name":"Paris","jour":10,"titre":"Retour à la maison","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-0.023559,37.906193&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-0.023559,37.906193","aiImageUrl":"jour10.jpg"}];
+      
+      markers.forEach((markerData) => {
+        const marker = new google.maps.Marker({
+          position: { lat: markerData.lat, lng: markerData.lng },
+          map: map,
+          title: markerData.name,
+          label: String(markerData.jour)
+        });
+        
+        const contentString = `
+          <div class="info-window">
+            <img src="${markerData.streetViewUrl}" alt="Street View de ${markerData.name}" />
+            <h3>Jour ${markerData.jour}</h3>
+            <p><strong>${markerData.name}</strong></p>
+            <p><a href="${markerData.streetViewLinkUrl}" target="_blank" rel="noopener noreferrer"><strong>${markerData.titre}</strong></a></p>
+          </div>
+        `;
+        
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q&callback=initMap">
+  </script>
+</body>
+</html>
