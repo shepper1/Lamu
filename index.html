@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamu, l'île hors du temps </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Lamu, l'île hors du temps</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée au paradis Swahili</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Immersion dans la vieille ville</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Plage de sable blanc et village bohème</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Coucher de soleil sur l'Océan Indien</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Sur les traces des anciens Swahilis</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Gastronomie et savoir-faire Swahili</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Aventure dans la mangrove</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Flânerie et derniers instants</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Derniers moments et envol</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Retour à la maison</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Lamu</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Lamu, l'île hors du temps</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 10 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2200€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 12h à 15h avec escale depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée au paradis Swahili</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, vous atterrissez sur l'île voisine de Manda. Une courte traversée en bateau vous mène à Lamu, où le temps semble s'être arrêté. L'absence de voitures, remplacées par les ânes et les boutres (dhows), vous plonge immédiatement dans une atmosphère unique. Installez-vous et imprégnez-vous de la quiétude ambiante pour débuter en douceur.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Arrivée et transfert en bateau:</strong> Atterrissez sur l'île de Manda et rejoignez votre hébergement via un bateau traditionnel, votre premier contact avec la vie insulaire.</li>
+                            
+                                <li>🚶‍♂️ <strong>Premiers pas et dîner face à la mer:</strong> Faites une courte balade pour vous familiariser avec les ruelles avant de savourer un dîner de fruits de mer frais les pieds dans le sable.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">✈️ Transfert aéroport</p>
+                                <p class="text-gray-700">L'aéroport est sur l'île de Manda. Le transfert vers Lamu ou Shela se fait obligatoirement en bateau (environ 10-15 min).</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🐴 Transport local</p>
+                                <p class="text-gray-700">Il n'y a pas de voitures à Lamu. Préparez-vous à marcher ou à utiliser les ânes, le principal moyen de transport terrestre.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Immersion dans la vieille ville</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongez dans l'histoire de Lamu, site classé au patrimoine mondial de l'UNESCO. Perdez-vous dans le labyrinthe de ses ruelles étroites, admirez les portes en bois sculpté et découvrez l'héritage swahili préservé. Chaque coin de rue raconte une histoire, un mélange d'influences arabes, persanes, indiennes et européennes.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏛️ <strong>Visite du Fort de Lamu et du musée:</strong> Explorez le fort du XIXe siècle qui domine le front de mer et plongez dans l'histoire locale au Lamu Museum pour comprendre la culture swahilie.</li>
+                            
+                                <li>🎨 <strong>Découverte de l'artisanat local:</strong> Flânez dans les échoppes pour admirer le travail des artisans, notamment les célèbres portes sculptées et les maquettes de boutres.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧭 Se perdre</p>
+                                <p class="text-gray-700">N'hésitez pas à vous perdre dans les ruelles. C'est la meilleure façon de découvrir les trésors cachés de la ville.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Chaussures</p>
+                                <p class="text-gray-700">Portez des chaussures confortables, les rues sont pavées de manière inégale et vous marcherez beaucoup.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plage de sable blanc et village bohème</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">À quelques kilomètres de l'agitation de Lamu Town se trouve le village de Shela. Plus calme et chic, il est réputé pour sa magnifique plage de 12 km et ses maisons blanches aux toits de makuti. C'est l'endroit idéal pour se détendre, se baigner et profiter d'une ambiance plus décontractée.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♀️ <strong>Balade de Lamu à Shela:</strong> Empruntez le sentier côtier à marée basse pour une agréable marche de 45 minutes entre les deux villages, en observant la vie locale.</li>
+                            
+                                <li>🏖️ <strong>Détente sur la plage de Shela:</strong> Profitez de l'immense plage de sable fin pour vous baigner, lire ou simplement admirer les boutres qui passent au loin.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌊 Marées</p>
+                                <p class="text-gray-700">Vérifiez les horaires des marées pour la balade entre Lamu et Shela. À marée haute, il faudra prendre un bateau-taxi.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Restaurant</p>
+                                <p class="text-gray-700">Le restaurant Peponi Hotel est une institution à Shela, parfait pour un verre ou un déjeuner avec une vue imprenable.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Coucher de soleil sur l'Océan Indien</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">L'expérience emblématique de Lamu est sans conteste la sortie en dhow, ce voilier traditionnel arabe. Embarquez en fin d'après-midi pour une navigation silencieuse dans le chenal. Laissez-vous bercer par les vagues tandis que le soleil descend, peignant le ciel de couleurs flamboyantes. Un moment magique et inoubliable.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>⛵ <strong>Croisière au coucher du soleil:</strong> Naviguez sur un dhow traditionnel et observez le ciel s'embraser pendant que le soleil se couche sur l'océan, un spectacle d'une rare beauté.</li>
+                            
+                                <li>🦞 <strong>Dîner à bord:</strong> Prolongez l'expérience avec un dîner de fruits de mer grillés, préparé par l'équipage et servi à bord sous les étoiles.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤝 Négociation</p>
+                                <p class="text-gray-700">N'hésitez pas à discuter avec plusieurs capitaines sur le front de mer et à négocier le prix de votre excursion.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧥 Petite laine</p>
+                                <p class="text-gray-700">Prévoyez un vêtement léger pour le retour, la brise marine peut être fraîche après le coucher du soleil.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sur les traces des anciens Swahilis</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Traversez le chenal pour rejoindre l'île de Manda, un havre de paix sauvage. Explorez les ruines de Takwa, les vestiges d'une ancienne cité swahilie du XVIe siècle abandonnée mystérieusement. L'après-midi, détendez-vous sur les plages isolées de l'île, loin de toute agitation.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏺 <strong>Exploration des ruines de Takwa:</strong> Marchez à travers la mangrove pour découvrir ce site historique fascinant, avec sa grande mosquée et son pilier funéraire remarquablement conservés.</li>
+                            
+                                <li>🏝️ <strong>Après-midi à Manda Bay:</strong> Profitez des plages tranquilles de Manda, idéales pour la baignade et la détente, avec une vue imprenable sur Shela.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦟 Anti-moustiques</p>
+                                <p class="text-gray-700">Les ruines de Takwa sont situées près d'une mangrove, un anti-moustiques est indispensable.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💧 Hydratation</p>
+                                <p class="text-gray-700">Apportez beaucoup d'eau, il y a peu d'ombre sur le site et la chaleur peut être intense.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Gastronomie et savoir-faire Swahili</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Immergez-vous davantage dans la culture locale en découvrant ses saveurs et ses traditions. Participez à un cours de cuisine pour apprendre les secrets des plats swahilis, riches en épices et en lait de coco. Puis, visitez un sanctuaire qui œuvre pour la préservation de l'animal emblématique de l'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🍲 <strong>Cours de cuisine Swahilie:</strong> Apprenez à préparer des plats locaux comme le biryani ou le poisson au lait de coco lors d'un cours convivial chez l'habitant.</li>
+                            
+                                <li>🐴 <strong>Visite du Donkey Sanctuary:</strong> Découvrez le travail de ce refuge qui soigne et protège les ânes, piliers de l'économie et du transport sur l'île.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌶️ Épices</p>
+                                <p class="text-gray-700">La cuisine swahilie utilise beaucoup de cardamome, clou de girofle, cannelle et cumin. Une explosion de saveurs !</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">❤️ Soutien</p>
+                                <p class="text-gray-700">Le Donkey Sanctuary vit de dons. Votre visite est une forme de soutien à leur action essentielle.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Aventure dans la mangrove</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Partez à la découverte d'un autre visage de l'archipel : ses vastes étendues de mangrove. Cet écosystème vital abrite une faune riche et protège les côtes. Une excursion en bateau ou en kayak dans ce labyrinthe de verdure est une expérience paisible et fascinante, offrant une perspective différente sur la beauté naturelle de Lamu.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Excursion en kayak dans la mangrove:</strong> Pagayez en silence à travers les canaux étroits de la mangrove pour observer les oiseaux et les crabes dans leur habitat naturel.</li>
+                            
+                                <li>🐠 <strong>Snorkeling à Manda Toto:</strong> Prenez un bateau pour l'île de Manda Toto, un excellent spot de snorkeling où vous pourrez admirer des coraux colorés et une vie marine abondante.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦀 Biodiversité</p>
+                                <p class="text-gray-700">La mangrove est une nurserie pour de nombreuses espèces de poissons et de crustacés, essentielle à l'équilibre de l'écosystème.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection solaire</p>
+                                <p class="text-gray-700">La réverbération du soleil sur l'eau est forte. N'oubliez pas crème solaire, chapeau et lunettes.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Flânerie et derniers instants</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de cette journée pour faire ce dont vous avez le plus envie. Retourner sur la plage de Shela, vous perdre une dernière fois dans les ruelles de Lamu, ou chercher des souvenirs uniques à rapporter. C'est le moment de savourer la lenteur de la vie insulaire avant le départ.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛍️ <strong>Shopping de souvenirs:</strong> Cherchez des objets d'artisanat local comme des kikoys (paréos), des bijoux en perles ou des épices pour prolonger le voyage à la maison.</li>
+                            
+                                <li>🧘 <strong>Détente absolue:</strong> Offrez-vous un massage, participez à un cours de yoga face à la mer ou trouvez simplement un endroit calme pour lire et contempler l'océan.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎨 Galeries d'art</p>
+                                <p class="text-gray-700">Lamu et Shela abritent plusieurs petites galeries d'art présentant le travail d'artistes locaux et internationaux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Derniers moments et envol</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Savourez un dernier petit-déjeuner swahili face à la mer. Profitez des dernières heures pour une ultime baignade ou une courte promenade. Il est ensuite temps de faire la traversée en bateau vers l'aéroport de Manda pour votre vol retour, la tête remplie de souvenirs inoubliables.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>☕ <strong>Dernier café sur le front de mer:</strong> Prenez le temps d'observer une dernière fois l'animation des boutres et des ânes tout en sirotant un café kenyan.</li>
+                            
+                                <li>✈️ <strong>Transfert vers l'aéroport:</strong> Traversez en bateau jusqu'à l'aéroport de Manda pour prendre votre vol vers Nairobi, puis votre correspondance pour Paris.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Timing</p>
+                                <p class="text-gray-700">Prévoyez suffisamment de temps pour le transfert en bateau et l'enregistrement à l'aéroport de Manda, qui est de petite taille.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Retour à la maison</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Arrivée à Paris après un vol de nuit. Le voyage s'achève, mais les couleurs, les saveurs et la quiétude de Lamu resteront gravées dans votre mémoire. C'est la fin d'une parenthèse enchantée hors du temps.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏡 <strong>Arrivée à Paris:</strong> Atterrissage à Paris, fin de cette magnifique échappée kenyane.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Lamu/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">😴 Décalage horaire</p>
+                                <p class="text-gray-700">Le décalage horaire est minime (1 ou 2 heures selon la saison), ce qui facilite le retour à la routine.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de janvier à mars et de juillet à octobre.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌡️ :</strong> Climat équatorial chaud et humide (25-32°C). Prévoir vêtements légers en coton/lin et un maillot de bain.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est le Shilling kényan (KES). Prévoir suffisamment d'espèces, les distributeurs et paiements par carte sont rares.</li>
+                    
+                        <li><strong>⛵ :</strong> Sur l'île : à pied, à dos d'âne ou en bateau-taxi. Le dhow est utilisé pour les excursions.</li>
+                    
+                        <li><strong>📶 :</strong> Le Wi-Fi est disponible dans la plupart des hôtels mais peut être lent. Une carte SIM locale (Safaricom) est recommandée.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Lamu/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/kenya/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 France Diplomatie - Kenya</strong></a></li>
+                    
+                        <li><a href="https://magicalkenya.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌍 Magical Kenya</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/fr/ke/lamu/223651/weather-forecast/223651" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌤️ Météo à Lamu</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Lamu</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
